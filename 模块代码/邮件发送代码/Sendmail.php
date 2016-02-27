@@ -1,18 +1,18 @@
 <?php
-//·¢ËÍÓÊ¼þ
-	Vendor('Anda.Send_mail');//Send_mail.php·ÅÔÚthinkPHP LibraryÖÐµÄvendorÎÄ¼þ¼ÐÖÐ Í¨¹ý´Ë´úÂëÒýÓÃ¸ÃÎÄ¼þ
+//å‘é€é‚®ä»¶
+	Vendor('Anda.Send_mail');//Send_mail.phpæ”¾åœ¨thinkPHP Libraryä¸­çš„vendoræ–‡ä»¶å¤¹ä¸­ é€šè¿‡æ­¤ä»£ç å¼•ç”¨è¯¥æ–‡ä»¶
 	$content="Hello~".$nickname."!
-	ÄúÕýÔÚÊ¹ÓÃ *** ÓÊÏäÑéÖ¤Âë¹¦ÄÜ¡£ÄúµÄÑéÖ¤ÂëÊÇ£º
-	¡¾".$checkcode."¡¿
-	ÇëÔÚµ±ÌìÊäÈëµ½ÐèÒªÓÊÏäÑéÖ¤µÄ½çÃæ£¡Ê¹ÓÃºó»ò¹ýÆÚÊ§Ð§¡£";
-	$ret=send_mail_quick($user_info['email'],'Ñ¡¿ÎÖúÊÖ.WEB°æ|ÑéÖ¤ÂëÓÊ¼þ',$content);//µ÷ÓÃSend_mail.phpÖÐµÄsend_mail_quick()º¯ÊýÀ´·¢ËÍÓÊ¼þ
-	if($ret==""){//ÓÊ¼þ·¢ËÍÇé¿ö·´À¡ÅÐ¶Ï
-		$this->show("ÓÊ¼þ·¢ËÍ³É¹¦£¬Çëµ½ÓÊÏä²éÑ¯ÓÊ¼þ£¬²¢µ½ËùÐèÒ³ÃæÌîÐ´ÑéÖ¤Âë¡£");
+	æ‚¨æ­£åœ¨ä½¿ç”¨ *** é‚®ç®±éªŒè¯ç åŠŸèƒ½ã€‚æ‚¨çš„éªŒè¯ç æ˜¯ï¼š
+	ã€".$checkcode."ã€‘
+	è¯·åœ¨å½“å¤©è¾“å…¥åˆ°éœ€è¦é‚®ç®±éªŒè¯çš„ç•Œé¢ï¼ä½¿ç”¨åŽæˆ–è¿‡æœŸå¤±æ•ˆã€‚";
+	$ret=send_mail_quick($user_info['email'],'é€‰è¯¾åŠ©æ‰‹.WEBç‰ˆ|éªŒè¯ç é‚®ä»¶',$content);//è°ƒç”¨Send_mail.phpä¸­çš„send_mail_quick()å‡½æ•°æ¥å‘é€é‚®ä»¶
+	if($ret==""){//é‚®ä»¶å‘é€æƒ…å†µåé¦ˆåˆ¤æ–­
+		$this->show("é‚®ä»¶å‘é€æˆåŠŸï¼Œè¯·åˆ°é‚®ç®±æŸ¥è¯¢é‚®ä»¶ï¼Œå¹¶åˆ°æ‰€éœ€é¡µé¢å¡«å†™éªŒè¯ç ã€‚");
 		$this->redirect('Index/index');
 	}else {
 		$data['state']=2;
-		$data['extra']="¡¾ÓÊ¼þ·¢ËÍÊ§°Ü£º¡¿".$ret;
+		$data['extra']="ã€é‚®ä»¶å‘é€å¤±è´¥ï¼šã€‘".$ret;
 		$user_verify->where("user_id='{$user_info['id']}' AND checkcode='{$checkcode}' AND up_time='{$time}'")->save($data);
-		$this->error('ÓÊ¼þ·¢ËÍÊ§°Ü¡£');
+		$this->error('é‚®ä»¶å‘é€å¤±è´¥ã€‚');
 	}
 ?>
