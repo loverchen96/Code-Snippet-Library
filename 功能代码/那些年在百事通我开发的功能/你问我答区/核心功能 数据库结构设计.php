@@ -14,12 +14,12 @@ DATABASE 2 =》 问题核心数据库
 *数据库命名：wenda_problem
 *数据库结构
 	** id
-	** post_id
-	** post_time
+	** post_userid
 	** problem
 	** answer
 	** keyword
 	** answer_id
+	** post_time
 	** answer_time
 	** state
 * 数据库说明
@@ -29,11 +29,11 @@ DATABASE 3 =》待解决问题数据库
 *数据库命名：wenda_tobesolved
 *数据库结构
 	** id
-	** post_id
-	** post_time
+	** post_userid
 	** problem
 	** answer
-	** answer_id
+	** answer_userid
+	** post_time
 	** answer_time
 	** state
 * 数据库说明
